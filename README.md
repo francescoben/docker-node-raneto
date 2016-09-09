@@ -9,7 +9,7 @@ While a Raneto base image is available at the time of writing (https://github.co
 
 ## Content
 
-The last version of this image is based on Node 6.1.0-slim image, with global gulp-cli and a modified version of Raneto 0.9.0.
+The last version of this image is based on Node 6.1.0-slim image, with global gulp-cli and a modified version of [Raneto 0.9.0](https://github.com/francescoben/Raneto).
 
 ## Usage
 
