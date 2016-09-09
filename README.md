@@ -14,11 +14,15 @@ The last version of this image is based on Node 6.1.0-slim image, with global gu
 ## Usage
 
 This image works mounting a local documentation folder in a volume inside the container, and exposing Raneto on port 80.
-If you want to change your Raneto configuration, use this image as base and copy a new configuration file in `/srv/raneto/config.js`.
+It also supports a custom configuration file for Raneto.
 
-To run the image issue:
+To run the image mounting only documentation's folder issue:
 
-`docker run -p 80:80 -v </path/to/your/content>:/srv/raneto/content -d francescoben/raneto`
+`docker run -p 80:80 -v </path/to/your/content>:/srv/raneto/content -d francescoben/docker-node-raneto`
+
+To run the image with documentation's folder and a custom config file issue:
+
+`docker run -p 80:80 -v </path/to/your/content-folder>:/srv/raneto/content -v </path/to/your/config-file>:/srv/raneto/config.js  -d francescoben/docker-node-raneto`
 
 You can then browse your content visiting:
 
@@ -31,4 +35,4 @@ You can then browse your content visiting:
 
 ## Credits
 
-Thanks to my colleague Paolo Posturino who helped me to improve his version of this Docker Image [SparkFabrik Raneto Docker image](https://github.com/sparkfabrik/docker-node-raneto).
+Thanks to my colleague Paolo Pustorino who helped me to improve his version of this Docker Image [SparkFabrik Raneto Docker image](https://github.com/sparkfabrik/docker-node-raneto).
