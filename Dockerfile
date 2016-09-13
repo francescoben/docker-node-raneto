@@ -13,7 +13,7 @@ RUN cd /tmp \
     && rm "master.tar.gz"
 
 # Install Raneto and his dependencies
-WORKDIR $LOCKE_INSTALL_DIR
+WORKDIR $RANETO_INSTALL_DIR
 RUN npm install
 
 # Expose port 80
