@@ -3,6 +3,7 @@ MAINTAINER Francesco Benigno <ben.francesco@gmail.com>
 
 # Set variables
 ENV RANETO_INSTALL_DIR /srv/raneto
+ENV PORT=80
 
 # Get Raneto from sources
 RUN cd /tmp \
@@ -11,15 +12,12 @@ RUN cd /tmp \
     && tar -xzf "master.tar.gz" -C $RANETO_INSTALL_DIR --strip-components=1 \
     && rm "master.tar.gz"
 
-# Install gulp to manage Raneto dependencies
-RUN npm install --global gulp-cli
+# Install Raneto and his dependencies
+WORKDIR $LOCKE_INSTALL_DIR
+RUN npm install
 
-# Install and configure Raneto
-WORKDIR $RANETO_INSTALL_DIR
-RUN npm install \
-    && gulp
+# Expose port 80
+EXPOSE 80
 
 # Let's go
-ENV PORT=80
-EXPOSE 80
 CMD ["npm", "start"]
